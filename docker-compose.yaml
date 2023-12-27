@@ -1,0 +1,17 @@
+version: '3'
+services:
+  test_front:
+    image: test-front
+    container_name: test-front
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always 
+    ports:
+     - 8030:80
+    networks:
+     - test_network
+
+networks:
+  test_network:
+    external: true
